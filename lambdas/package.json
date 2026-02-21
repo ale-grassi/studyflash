@@ -1,0 +1,25 @@
+{
+    "name": "@studyflash/lambdas",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "node build.mjs",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@aws-sdk/client-bedrock-runtime": "^3.700.0",
+        "@aws-sdk/client-dynamodb": "^3.700.0",
+        "@aws-sdk/client-sqs": "^3.700.0",
+        "@aws-sdk/client-ssm": "^3.700.0",
+        "@aws-sdk/lib-dynamodb": "^3.700.0",
+        "@microsoft/microsoft-graph-client": "^3.0.7",
+        "@studyflash/shared": "*",
+        "uuid": "^10.0.0"
+    },
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.145",
+        "@types/uuid": "^10.0.0",
+        "esbuild": "^0.27.3",
+        "typescript": "^5.5.0"
+    }
+}

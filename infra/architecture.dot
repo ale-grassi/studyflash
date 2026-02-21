@@ -1,0 +1,404 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = 1;
+  nodesep = 0.6;
+  ranksep = 0.75;
+  fontname = "Sans-Serif";
+  fontsize = 15;
+  dpi = 200;
+  rankdir = "BT";
+  compound = true;
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488";
+    penwidth = 2;
+    arrowhead = "dot";
+    arrowtail = "dot";
+  ];
+  node [
+    shape = "box";
+    style = "rounded";
+    fixedsize = true;
+    width = 1.7;
+    height = 1.7;
+    labelloc = "c";
+    imagescale = true;
+    fontname = "Sans-Serif";
+    fontsize = 8;
+    margin = 8;
+  ];
+  subgraph "App" {
+    subgraph "cluster-SubGraph.App" {
+      graph [
+        label = "App";
+        labelloc = "b";
+        labeljust = "l";
+        margin = 10;
+        fontsize = 16;
+        penwidth = 2;
+        pencolor = "#888888";
+        style = "filled,rounded";
+        fillcolor = "#f3f3f3";
+      ];
+      subgraph "cluster-SubGraph.StudyflashDb" {
+        graph [
+          label = "StudyflashDb";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#e4e4e4";
+        ];
+        "StudyflashDb/SupportTable" [
+          label = " SupportTable";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Database/64/Arch_Amazon-DynamoDB_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 1.2;
+          height = 1.466;
+        ];
+      }
+      subgraph "cluster-SubGraph.StudyflashIngestion" {
+        graph [
+          label = "StudyflashIngestion";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#e4e4e4";
+        ];
+        "StudyflashIngestion/AiPipelineDLQ" [
+          label = " AiPipelineDLQ";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashIngestion/AiPipelineQueue" [
+          label = " AiPipelineQueue";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashIngestion/AiPipelineFn" [
+          label = " AiPipelineFn";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+      }
+      subgraph "cluster-SubGraph.StudyflashApi" {
+        graph [
+          label = "StudyflashApi";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#e4e4e4";
+        ];
+        "StudyflashApi/TicketsFn" [
+          label = " TicketsFn";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashApi/ReplyFn" [
+          label = " ReplyFn";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashApi/EnrichmentFn" [
+          label = " EnrichmentFn";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashApi/DraftFn" [
+          label = " DraftFn";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashApi/WebhookFn" [
+          label = " WebhookFn";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashApi/SupportApi" [
+          label = " SupportApi";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 1.2;
+          height = 1.466;
+        ];
+      }
+      subgraph "cluster-SubGraph.StudyflashSubscription" {
+        graph [
+          label = "StudyflashSubscription";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#e4e4e4";
+        ];
+        "StudyflashSubscription/SubscriptionFn" [
+          label = " SubscriptionFn";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashSubscription/DailyRenewal" [
+          label = " DailyRenewal";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_Amazon-EventBridge_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 1.2;
+          height = 1.466;
+        ];
+      }
+      subgraph "cluster-SubGraph.StudyflashFrontend" {
+        graph [
+          label = "StudyflashFrontend";
+          labelloc = "b";
+          labeljust = "l";
+          margin = 10;
+          fontsize = 16;
+          penwidth = 2;
+          pencolor = "#888888";
+          style = "filled,rounded";
+          fillcolor = "#e4e4e4";
+        ];
+        "StudyflashFrontend/FrontendBucket" [
+          label = " FrontendBucket";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashFrontend/FrontendCDN" [
+          label = " FrontendCDN";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-CloudFront_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.266;
+        ];
+        "StudyflashFrontend/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C" [
+          label = " Custom \nCDKBucketDeployment86";
+          fontsize = 12;
+          image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+          imagescale = "true";
+          imagepos = "tc";
+          penwidth = 0;
+          shape = "node";
+          fixedsize = "true";
+          labelloc = "b";
+          width = 2;
+          height = 2.4819999999999998;
+        ];
+        subgraph "cluster-SubGraph.DeployFrontend" {
+          graph [
+            label = "DeployFrontend";
+            labelloc = "b";
+            labeljust = "l";
+            margin = 10;
+            fontsize = 16;
+            penwidth = 2;
+            pencolor = "#888888";
+            style = "filled,rounded";
+            fillcolor = "#d6d6d6";
+          ];
+          "StudyflashFrontend/DeployFrontend/AwsCliLayer" [
+            label = " AwsCliLayer";
+            fontsize = 12;
+            image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 2;
+            height = 2.266;
+          ];
+          "StudyflashFrontend/DeployFrontend/CustomResource" [
+            label = " CloudFormation\nCustomResource\nCustomResource";
+            fontsize = 12;
+            image = "/home/herz/.npm/_npx/b98735c91b702b55/node_modules/cdk-dia/icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png";
+            imagescale = "true";
+            imagepos = "tc";
+            penwidth = 0;
+            shape = "node";
+            fixedsize = "true";
+            labelloc = "b";
+            width = 1.2;
+            height = 1.898;
+          ];
+        }
+      }
+    }
+  }
+  "StudyflashIngestion/AiPipelineQueue" -> "StudyflashIngestion/AiPipelineDLQ" [
+    dir = "both";
+  ];
+  "StudyflashIngestion/AiPipelineFn" -> "StudyflashDb/SupportTable" [
+    dir = "both";
+  ];
+  "StudyflashIngestion/AiPipelineFn" -> "StudyflashIngestion/AiPipelineQueue" [
+    dir = "both";
+  ];
+  "StudyflashApi/TicketsFn" -> "StudyflashDb/SupportTable" [
+    dir = "both";
+  ];
+  "StudyflashApi/ReplyFn" -> "StudyflashDb/SupportTable" [
+    dir = "both";
+  ];
+  "StudyflashApi/EnrichmentFn" -> "StudyflashDb/SupportTable" [
+    dir = "both";
+  ];
+  "StudyflashApi/DraftFn" -> "StudyflashDb/SupportTable" [
+    dir = "both";
+  ];
+  "StudyflashApi/WebhookFn" -> "StudyflashDb/SupportTable" [
+    dir = "both";
+  ];
+  "StudyflashApi/WebhookFn" -> "StudyflashIngestion/AiPipelineQueue" [
+    dir = "both";
+  ];
+  "StudyflashApi/SupportApi" -> "StudyflashApi/TicketsFn" [
+    dir = "both";
+  ];
+  "StudyflashApi/SupportApi" -> "StudyflashApi/ReplyFn" [
+    dir = "both";
+  ];
+  "StudyflashApi/SupportApi" -> "StudyflashApi/EnrichmentFn" [
+    dir = "both";
+  ];
+  "StudyflashApi/SupportApi" -> "StudyflashApi/DraftFn" [
+    dir = "both";
+  ];
+  "StudyflashApi/SupportApi" -> "StudyflashApi/WebhookFn" [
+    dir = "both";
+  ];
+  "StudyflashSubscription/SubscriptionFn" -> "StudyflashApi/SupportApi" [
+    dir = "both";
+  ];
+  "StudyflashSubscription/DailyRenewal" -> "StudyflashSubscription/SubscriptionFn" [
+    dir = "both";
+  ];
+  "StudyflashFrontend/FrontendBucket" -> "StudyflashFrontend/FrontendCDN" [
+    dir = "both";
+  ];
+  "StudyflashFrontend/FrontendCDN" -> "StudyflashFrontend/FrontendBucket" [
+    dir = "both";
+  ];
+  "StudyflashFrontend/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C" -> "StudyflashFrontend/FrontendBucket" [
+    dir = "both";
+  ];
+  "StudyflashFrontend/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C" -> "StudyflashFrontend/DeployFrontend/AwsCliLayer" [
+    dir = "both";
+  ];
+}

@@ -1,0 +1,20 @@
+{
+  "name": "studyflash-support",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "lambdas",
+    "infra"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "build:shared": "npm run build -w shared",
+    "build:lambdas": "npm run build -w lambdas",
+    "build:infra": "npm run build -w infra",
+    "synth": "npm run synth -w infra",
+    "dev": "cd frontend && npm run dev"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
